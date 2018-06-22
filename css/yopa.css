@@ -444,20 +444,6 @@ template {
 [hidden] {
   display: none;
 }
-.dev-header {
-  width: 100%;
-  position: fixed;
-  bottom: 0px;
-  left: 0px;
-  float: left;
-  padding: 10px;
-  list-style-type: none;
-}
-.dev-header li {
-  width: auto;
-  float: left;
-  margin-right: 10px;
-}
 body {
   background: #F4F6F7;
   font-family: "Open Sans";
@@ -649,10 +635,24 @@ ul li {
 .notesOverviewTable table tbody td {
   font-weight: 600;
   font-size: 1.1em;
+  -webkit-transition: background 0.1s ease-in-out;
+  -moz-transition: background 0.1s ease-in-out;
+  -ms-transition: background 0.1s ease-in-out;
+  -o-transition: background 0.1s ease-in-out;
+  transition: background 0.1s ease-in-out;
 }
 .notesOverviewTable table tbody td.loading {
   text-align: center;
   padding: 50px 0px;
+}
+.notesOverviewTable table tbody td.loading:hover {
+  background: #FFFFFF;
+}
+.notesOverviewTable table tbody tr {
+  cursor: pointer;
+}
+.notesOverviewTable table tbody tr:hover td {
+  background: #fafafa;
 }
 .notesOverviewTable table tfoot td {
   padding: 15px 0px 0px 0px;

@@ -43,7 +43,8 @@
                 transition.to().name !== 'login'
                 && !AuthService.isAuthenticated()
             ) {
-                //$state.go('login');
+                $window.location = '/login';
+                return false;
             }
 
         });

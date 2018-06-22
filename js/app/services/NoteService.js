@@ -31,6 +31,24 @@
 
         };
 
+        this.create = (model) => {
+
+            return $q((resolve, reject) => {
+
+                APIService.call('POST', 'api/notes', model).then((response) => {
+
+                    resolve(response.data.data);
+
+                }, (response) => {
+
+                    reject(response.data.message);
+
+                });
+
+            });
+
+        };
+
     };
 
     angular.module(app).service('NoteService', [

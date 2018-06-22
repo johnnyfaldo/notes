@@ -24,6 +24,11 @@
 
         }
 
+        this.delete = function(key) {
+            window.localStorage.removeItem(key);
+        };
+
+
     };
 
     angular.module(app).service('StorageService', [

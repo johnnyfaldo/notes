@@ -29,12 +29,24 @@
       td {
         font-weight:600;
         font-size:1.1em;
+        .fastTransition(background);
 
         &.loading {
           text-align:center;
           padding:50px 0px;
+          &:hover {
+            background:@white;
+          }
         }
 
+      }
+      tr {
+        cursor:pointer;
+        &:hover {
+          td {
+            background: #fafafa;
+          }
+        }
       }
     }
 

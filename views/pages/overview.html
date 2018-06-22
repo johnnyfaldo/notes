@@ -22,7 +22,7 @@
                         <img alt="loading" class="loader" src="/images/loading.gif" />
                     </td>
                 </tr>
-                <tr ng-if="!loading" ng-repeat="note in notes">
+                <tr ng-if="!loading" ui-sref="read({noteId:note.id})" ng-repeat="note in notes">
                     <td>{{ note.user.name }}</td>
                     <td>{{ note.title }}</td>
                     <td>{{ note.created_at | yopaDate:"dd/MM/yyyy HH:mm" }}</td>

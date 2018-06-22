@@ -19,8 +19,9 @@
         });
 
         $stateProvider.state('read', {
-            url: '/read',
+            url: '/read/:noteId',
             parent:'main',
+            params: {noteId:null},
             templateUrl: 'views/pages/read.html',
             controller:'ReadController'
         });

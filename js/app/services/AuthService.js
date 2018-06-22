@@ -43,6 +43,12 @@
 
         };
 
+        this.logout = () => {
+
+            StorageService.delete('token');
+
+        };
+
     };
 
     angular.module(app).service('AuthService', [
