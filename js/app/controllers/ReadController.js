@@ -14,7 +14,6 @@
         $scope.note = $stateParams.note;
 
         $scope.model = {
-            title:null,
             content:null,
             parent:noteId
         };
@@ -24,6 +23,8 @@
         $scope.loading = !($stateParams.note);
 
         $scope.additionalNotes = [];
+
+        $scope.additionIsActive = false;
 
         let setAdditionalNotes = (note, children) => {
 
@@ -52,6 +53,43 @@
             setAdditionalNotes($scope.note, $scope.note.children);
 
         }
+
+        $scope.openAdditional = () => {
+
+            $scope.additionIsActive = true;
+
+        };
+
+        $scope.closeAdditional = () => {
+
+            $scope.additionIsActive = false;
+
+        };
+
+        $scope.submit = (isValid) => {
+
+            if(!isValid) {
+                return;
+            }
+
+            $scope.processing = true;
+
+            $scope.model.title = $scope.note.title;
+
+            NoteService.create($scope.model).then((note) => {
+
+                $scope.model.content = null;
+                $scope.additionalNotes.unshift(note);
+                $scope.processing = false;
+
+            }, (error) => {
+
+                $scope.error = error;
+                $scope.processing = false;
+
+            });
+
+        };
 
     };
 

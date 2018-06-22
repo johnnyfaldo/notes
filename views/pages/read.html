@@ -8,20 +8,20 @@
 
     <div class="form additionalNoteForm" ng-if="additionIsActive" ng-if="note">
 
-        <form name="noteForm" ng-submit="submitForm(userForm.$valid)" novalidate>
+        <form name="noteForm" ng-submit="submit(noteForm.$valid)" novalidate>
 
             <div class="form-group">
-                <textarea class="form-control" ng-model="content"></textarea>
+                <textarea class="form-control" ng-required="true" ng-model="model.content"></textarea>
             </div>
 
-            <ul class="form-options">
+            <ul class="form-options withBorder">
                 <li class="left">
-                    <button type="submit" class="btn btn-secondary">
+                    <button type="submit" ng-click="closeAdditional()" class="btn btn-secondary">
                         Cancel
                     </button>
                 </li>
                 <li class="right">
-                    <button type="submit" class="btn btn-primary">
+                    <button type="submit" ng-disabled="noteForm.$invalid || processing" class="btn btn-primary">
                         Add note
                         <span class="arrow"></span>
                     </button>
@@ -40,7 +40,7 @@
             </button>
         </li>
         <li class="right">
-            <button type="submit" class="btn btn-primary">
+            <button type="submit" ng-click="openAdditional()" class="btn btn-primary">
                 Add additional note
                 <span class="arrow"></span>
             </button>
@@ -53,10 +53,10 @@
 
     <ul class="notes" ng-if="note">
 
-        <li class="note" ng-repeat="additionalNote in note.children">
+        <li class="note" ng-repeat="card in note.children">
 
             <div class="profile">
-                <img alt="profile image" src="https://randomuser.me/api/portraits/men/32.jpg" />
+                <img alt="profile image" src="{{ card.user.avatar }}" />
             </div>
 
             <div class="card">
@@ -64,12 +64,12 @@
                 <span class="speechArrow"><span class="overlay"></span></span>
 
                 <ul class="details">
-                    <li class="name">{{ note.user.name }}</li>
-                    <li class="date">{{ note.date | yopaDate }}</li>
+                    <li class="name">{{ card.user.name }}</li>
+                    <li class="date">{{ card.date | yopaDate }}</li>
                 </ul>
 
                 <div class="content">
-                    {{ note.content }}
+                    {{ card.content }}
                 </div>
 
             </div>
