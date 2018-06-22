@@ -475,6 +475,9 @@ ul li {
 .container {
   max-width: 850px;
 }
+.loader {
+  width: 40px;
+}
 .pageHeading {
   width: 100%;
   float: left;
@@ -567,6 +570,11 @@ ul li {
   padding: 8px 12px 6px 12px;
   font-size: 15px;
 }
+.btn-primary:disabled,
+.btn-secondary:disabled {
+  background: #1FBA97;
+  border-color: #1A9E80;
+}
 .btn-primary:hover,
 .btn-secondary:hover,
 .btn-primary:visited,
@@ -641,6 +649,10 @@ ul li {
 .notesOverviewTable table tbody td {
   font-weight: 600;
   font-size: 1.1em;
+}
+.notesOverviewTable table tbody td.loading {
+  text-align: center;
+  padding: 50px 0px;
 }
 .notesOverviewTable table tfoot td {
   padding: 15px 0px 0px 0px;
@@ -741,4 +753,11 @@ ul li {
 }
 .loginForm {
   max-width: 408px;
+}
+.loginForm button[type=submit] {
+  float: left;
+}
+.loginForm .loader {
+  float: left;
+  margin: 0px 0px 0px 15px;
 }

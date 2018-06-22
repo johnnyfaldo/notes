@@ -17,16 +17,16 @@
             </tr>
             </thead>
             <tbody>
-            <tr>
-                <td>Henry Jones</td>
-                <td>This is a note</td>
-                <td>01/08/15 at 19:32</td>
-            </tr>
-            <tr>
-                <td>Henry Jones</td>
-                <td>This is a note</td>
-                <td>01/08/15 at 19:32</td>
-            </tr>
+                <tr ng-hide="!loading">
+                    <td colspan="3" class="loading">
+                        <img alt="loading" class="loader" src="/images/loading.gif" />
+                    </td>
+                </tr>
+                <tr ng-if="!loading" ng-repeat="note in notes">
+                    <td>{{ note.user.name }}</td>
+                    <td>{{ note.title }}</td>
+                    <td>{{ note.created_at | yopaDate:"dd/MM/yyyy HH:mm" }}</td>
+                </tr>
             </tbody>
             <tfoot>
             <tr>

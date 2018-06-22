@@ -28,7 +28,7 @@
 
                 }, (response) => {
 
-                    reject(response);
+                    reject(response.data.message);
 
                 });
 
@@ -38,7 +38,7 @@
 
         this.isAuthenticated = () => {
 
-            //TODO make less bad
+            //TODO check expiry etc
             return (null !== StorageService.get('token'));
 
         };

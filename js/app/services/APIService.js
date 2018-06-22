@@ -5,7 +5,8 @@
     let APIService = function (
         $http,
         $q,
-        appConfig
+        appConfig,
+        StorageService
     ) {
 
         this.domain = appConfig.domain;
@@ -13,14 +14,19 @@
         this.client_id = appConfig.client_id;
         this.client_secret = appConfig.client_secret;
 
-        this.call = (verb, url, data) => {
+        this.call = (verb, url, data, headers) => {
+
+            if(StorageService.get('token')) {
+                headers = this.injectToken(headers);
+            }
 
             return $q((resolve, reject) => {
 
                 $http({
                     method: verb,
                     url: this.domain+url,
-                    data: data
+                    data: data,
+                    headers:headers
                 }).then((response) => {
 
                     if(response.status !== 200) {
@@ -41,12 +47,25 @@
 
         };
 
+        this.injectToken = (headers) => {
+
+            if(!headers) {
+                headers = {};
+            }
+
+            headers.Authorization = StorageService.get('token');
+
+            return headers;
+
+        }
+
     };
 
     angular.module(app).service('APIService', [
         '$http',
         '$q',
         'appConfig',
+        'StorageService',
         APIService
     ]);
 
