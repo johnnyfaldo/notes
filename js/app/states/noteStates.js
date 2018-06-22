@@ -7,6 +7,7 @@
         $stateProvider.state('overview', {
             url: '/overview',
             parent:'main',
+            params: {useCache:false},
             templateUrl: 'views/pages/overview.html',
             controller:'OverviewController'
         });
@@ -21,7 +22,7 @@
         $stateProvider.state('read', {
             url: '/read/:noteId',
             parent:'main',
-            params: {noteId:null},
+            params: {noteId:null, note:null},
             templateUrl: 'views/pages/read.html',
             controller:'ReadController'
         });

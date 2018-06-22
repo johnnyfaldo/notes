@@ -49,6 +49,24 @@
 
         };
 
+        this.show = (noteId) => {
+
+            return $q((resolve, reject) => {
+
+                APIService.call('GET', 'api/notes/'+noteId).then((response) => {
+
+                    resolve(response.data.data);
+
+                }, (response) => {
+
+                    reject(response.data.message);
+
+                });
+
+            });
+
+        };
+
     };
 
     angular.module(app).service('NoteService', [

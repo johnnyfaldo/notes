@@ -444,12 +444,26 @@ template {
 [hidden] {
   display: none;
 }
+::selection {
+  background: #ff14bc;
+  color: #FFFFFF;
+}
+::-moz-selection {
+  background: #ff14bc;
+  color: #FFFFFF;
+}
 body {
   background: #F4F6F7;
   font-family: "Open Sans";
   margin-top: 30px;
   font-size: 12px;
   color: #122D43;
+  margin-bottom: 80px;
+}
+.appContainer {
+  width: 100%;
+  float: left;
+  padding-bottom: 80px;
 }
 ul {
   list-style-type: none;
@@ -478,6 +492,7 @@ ul li {
 .pageHeading a {
   float: right;
   margin-top: -20px;
+  cursor: pointer;
   color: #4A90E2 !important;
 }
 .form {
@@ -760,4 +775,12 @@ ul li {
 .loginForm .loader {
   float: left;
   margin: 0px 0px 0px 15px;
+}
+.readPage .loader {
+  width: 100%;
+  padding: 50px 0px;
+  text-align: center;
+}
+.readPage .loader img {
+  width: 40px;
 }

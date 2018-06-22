@@ -1,12 +1,12 @@
 
 
-<div class="container">
+<div class="container readPage">
 
     <div class="pageHeading">
-        <h1>This is a note</h1>
+        <h1 ng-if="!loading">{{ note.title }}</h1>
     </div>
 
-    <div class="form additionalNoteForm" ng-if="additionIsActive">
+    <div class="form additionalNoteForm" ng-if="additionIsActive" ng-if="note">
 
         <form name="noteForm" ng-submit="submitForm(userForm.$valid)" novalidate>
 
@@ -32,9 +32,9 @@
 
     </div>
 
-    <ul class="form-options withBorder" ng-hide="additionIsActive">
+    <ul class="form-options withBorder" ng-hide="additionIsActive" ng-if="!loading">
         <li class="left">
-            <button type="submit" ui-sref="overview" class="btn btn-secondary">
+            <button type="submit" ui-sref="overview({useCache:true})" class="btn btn-secondary">
                 <span class="arrow"></span>
                 Back to overview
             </button>
@@ -47,32 +47,13 @@
         </li>
     </ul>
 
-    <ul class="notes">
+    <div class="loader" ng-hide="!loading">
+        <img alt="loading" class="loader" src="/images/loading.gif" />
+    </div>
 
-        <li class="note">
+    <ul class="notes" ng-if="note">
 
-            <div class="profile">
-                <img alt="profile image" src="https://randomuser.me/api/portraits/men/32.jpg" />
-            </div>
-
-            <div class="card">
-
-                <span class="speechArrow"><span class="overlay"></span></span>
-
-                <ul class="details">
-                    <li class="name">Tom</li>
-                    <li class="date">Today at 9:05</li>
-                </ul>
-
-                <div class="content">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed lacinia faucibus diam, at efficitur erat tristique id. Aenean eros sapien, tempor eu fringilla quis, pretium id neque.
-                </div>
-
-            </div>
-
-        </li>
-
-        <li class="note">
+        <li class="note" ng-repeat="additionalNote in note.children">
 
             <div class="profile">
                 <img alt="profile image" src="https://randomuser.me/api/portraits/men/32.jpg" />
@@ -83,12 +64,12 @@
                 <span class="speechArrow"><span class="overlay"></span></span>
 
                 <ul class="details">
-                    <li class="name">Tom</li>
-                    <li class="date">Today at 9:05</li>
+                    <li class="name">{{ note.user.name }}</li>
+                    <li class="date">{{ note.date | yopaDate }}</li>
                 </ul>
 
                 <div class="content">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed lacinia faucibus diam, at efficitur erat tristique id. Aenean eros sapien, tempor eu fringilla quis, pretium id neque.
+                    {{ note.content }}
                 </div>
 
             </div>

@@ -5,34 +5,49 @@
     let OverviewController = function(
         $state,
         $scope,
-        NoteService,
-        yopaDateFilter
+        $stateParams,
+        StorageService,
+        NoteService
     ) {
-
-        console.log('Overview Controller');
 
         $scope.notes = [];
 
         $scope.loading = true;
 
-        NoteService.index().then((notes) => {
+        let useCache = ($stateParams.useCache);
+
+        if(!useCache) {
+
+            NoteService.index().then((notes) => {
+
+                $scope.loading = false;
+                $scope.notes = notes;
+
+                StorageService.set('notes', notes);
+
+            }, (error) => {
+
+                $scope.loading = false;
+
+                alert('Error loading notes: '+error);
+
+            });
+
+        }else {
 
             $scope.loading = false;
-            $scope.notes = notes;
+            $scope.notes = StorageService.get('notes');
 
-        }, (error) => {
-
-            console.log('error: ', error);
-
-        });
+        }
 
     };
 
     angular.module(app).controller('OverviewController', [
        '$state',
        '$scope',
+       '$stateParams',
+       'StorageService',
        'NoteService',
-       'yopaDateFilter',
        OverviewController
     ]);
 
