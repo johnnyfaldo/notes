@@ -1,0 +1,53 @@
+
+.btn-primary, .btn-secondary {
+
+  .rounded(0px);
+  background:@btnPrimary;
+  color:@white;
+  border-width:0px 0px 2px 0px;
+  border-color:@btnPrimaryBorder;
+  text-transform: uppercase;
+  font-weight:bold;
+  letter-spacing: 1px;
+  padding:8px 12px 6px 12px;
+  font-size:15px;
+
+  &:hover, &:visited {
+    background:darken(@btnPrimary, 5%);
+  }
+
+  &:active, &:focus{
+    background:darken(@btnPrimary, 10%) !important;
+    border-color:darken(@btnPrimaryBorder, 5%) !important;
+    box-shadow:none !important;
+  }
+
+  .arrow {
+
+    width:11px;
+    height:11px;
+    display:inline-block;
+    .rotate(-45deg);
+    .rounded(2px);
+    border-right:3px solid @white;
+    border-bottom:3px solid @white;
+    margin-left:-2px;
+
+  }
+
+}
+
+.btn-secondary {
+
+  background:none;
+  border:2px solid #183854;
+  color:#183854 !important;
+  text-transform: capitalize;
+  font-size:14px;
+
+  &:hover, &:visited, &:active, &:focus {
+    background:none !important;
+    border-color:#183854 !important;
+  }
+
+}

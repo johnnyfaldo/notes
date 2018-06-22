@@ -1,0 +1,70 @@
+
+
+.form {
+
+  width:100%;
+  float:left;
+
+  .form-group {
+
+    label {
+      font-weight:600;
+      .red {
+        color: @requiredPink;
+      }
+    }
+
+    input, textarea {
+
+      outline: none;
+      .rounded(0px);
+      border-color:@border;
+
+      &:focus {
+        border-color:@activeBorder;
+        -webkit-box-shadow: 0px 1px 0px 0px rgba(176,189,193,1);
+        -moz-box-shadow: 0px 1px 0px 0px rgba(176,189,193,1);
+        box-shadow: 0px 1px 0px 0px rgba(176,189,193,1);
+      }
+
+    }
+
+    textarea {
+      height:135px;
+      resize:none;
+    }
+
+  }
+
+}
+
+.form-options {
+
+  width:100%;
+  float:left;
+
+  .left {
+    float:left;
+    .arrow {
+      border-color:@black;
+      .rotate(140deg);
+      width:9px;
+      height:9px;
+      float:left;
+      margin-top:7px;
+      margin-right:6px;
+    }
+  }
+
+  .right {
+    float:right;
+  }
+
+  &.withBorder {
+    padding-bottom:15px;
+    border-bottom:1px solid #D7DFE2;
+    margin-bottom:15px;
+  }
+
+}
+

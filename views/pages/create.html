@@ -1,0 +1,40 @@
+
+<div class="container">
+
+    <div class="pageHeading">
+        <h1>New note</h1>
+    </div>
+
+    <div class="form createForm">
+
+        <form name="noteForm" ng-submit="submitForm(userForm.$valid)" novalidate>
+
+            <div class="form-group">
+                <label>Title: <span class="red">*</span></label>
+                <input type="text" name="title" class="form-control" ng-model="title">
+            </div>
+
+            <div class="form-group">
+                <label>Note: <span class="red">*</span></label>
+                <textarea class="form-control" ng-model="content"></textarea>
+            </div>
+
+            <ul class="form-options">
+                <li class="left">
+                    <button type="submit" class="btn btn-secondary">
+                        Cancel
+                    </button>
+                </li>
+                <li class="right">
+                    <button type="submit" class="btn btn-primary">
+                        Add note
+                        <span class="arrow"></span>
+                    </button>
+                </li>
+            </ul>
+
+        </form>
+
+    </div>
+
+</div>

@@ -1,0 +1,49 @@
+
+<div class="container">
+
+    <div class="pageHeading">
+        <h1>Notes overview</h1>
+        <a ng-click="$parent.logout()">Logout</a>
+    </div>
+
+    <div class="notesOverviewTable">
+
+        <table class="table">
+            <thead>
+            <tr>
+                <td>Created by</td>
+                <td>Title</td>
+                <td>Date</td>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>Henry Jones</td>
+                <td>This is a note</td>
+                <td>01/08/15 at 19:32</td>
+            </tr>
+            <tr>
+                <td>Henry Jones</td>
+                <td>This is a note</td>
+                <td>01/08/15 at 19:32</td>
+            </tr>
+            </tbody>
+            <tfoot>
+            <tr>
+                <td colspan="3">
+
+                    <button type="submit"
+                            class="btn btn-primary"
+                            ui-sref="create">
+                                Create a new note
+                        <span class="arrow"></span>
+                    </button>
+
+                </td>
+            </tr>
+            </tfoot>
+        </table>
+
+    </div>
+
+</div>

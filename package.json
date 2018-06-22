@@ -1,0 +1,14 @@
+{
+	"name": "yopa",
+	"version": "0.1.0",
+	"dependencies": {},
+	"devDependencies": {
+		"grunt": "^1.0.1",
+		"grunt-contrib-concat": "^1.0.1",
+		"grunt-contrib-copy": "^1.0.0",
+		"grunt-contrib-less": "^1.4.0",
+		"grunt-contrib-uglify": "^2.2.0",
+		"grunt-contrib-watch": "^1.0.0",
+		"pushstate-server": "^3.0.1"
+	}
+}

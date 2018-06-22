@@ -1,0 +1,100 @@
+
+
+<div class="container">
+
+    <div class="pageHeading">
+        <h1>This is a note</h1>
+    </div>
+
+    <div class="form additionalNoteForm" ng-if="additionIsActive">
+
+        <form name="noteForm" ng-submit="submitForm(userForm.$valid)" novalidate>
+
+            <div class="form-group">
+                <textarea class="form-control" ng-model="content"></textarea>
+            </div>
+
+            <ul class="form-options">
+                <li class="left">
+                    <button type="submit" class="btn btn-secondary">
+                        Cancel
+                    </button>
+                </li>
+                <li class="right">
+                    <button type="submit" class="btn btn-primary">
+                        Add note
+                        <span class="arrow"></span>
+                    </button>
+                </li>
+            </ul>
+
+        </form>
+
+    </div>
+
+    <ul class="form-options withBorder" ng-hide="additionIsActive">
+        <li class="left">
+            <button type="submit" class="btn btn-secondary">
+                <span class="arrow"></span>
+                Back to overview
+            </button>
+        </li>
+        <li class="right">
+            <button type="submit" class="btn btn-primary">
+                Add additional note
+                <span class="arrow"></span>
+            </button>
+        </li>
+    </ul>
+
+    <ul class="notes">
+
+        <li class="note">
+
+            <div class="profile">
+                <img alt="profile image" src="https://randomuser.me/api/portraits/men/32.jpg" />
+            </div>
+
+            <div class="card">
+
+                <span class="speechArrow"><span class="overlay"></span></span>
+
+                <ul class="details">
+                    <li class="name">Tom</li>
+                    <li class="date">Today at 9:05</li>
+                </ul>
+
+                <div class="content">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed lacinia faucibus diam, at efficitur erat tristique id. Aenean eros sapien, tempor eu fringilla quis, pretium id neque.
+                </div>
+
+            </div>
+
+        </li>
+
+        <li class="note">
+
+            <div class="profile">
+                <img alt="profile image" src="https://randomuser.me/api/portraits/men/32.jpg" />
+            </div>
+
+            <div class="card">
+
+                <span class="speechArrow"><span class="overlay"></span></span>
+
+                <ul class="details">
+                    <li class="name">Tom</li>
+                    <li class="date">Today at 9:05</li>
+                </ul>
+
+                <div class="content">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed lacinia faucibus diam, at efficitur erat tristique id. Aenean eros sapien, tempor eu fringilla quis, pretium id neque.
+                </div>
+
+            </div>
+
+        </li>
+
+    </ul>
+
+</div>
