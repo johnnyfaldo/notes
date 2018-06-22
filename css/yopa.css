@@ -572,6 +572,7 @@ ul li {
 .btn-primary:visited,
 .btn-secondary:visited {
   background: #1ba485;
+  border-color: #16886e !important;
 }
 .btn-primary:active,
 .btn-secondary:active,
