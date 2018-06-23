@@ -784,3 +784,8 @@ ul li {
 .readPage .loader img {
   width: 40px;
 }
+.readPage .processingLoad {
+  width: 40px;
+  margin-right: 10px;
+  float: right;
+}

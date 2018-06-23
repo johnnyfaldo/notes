@@ -81,11 +81,13 @@
                 $scope.model.content = null;
                 $scope.additionalNotes.unshift(note);
                 $scope.processing = false;
+                $scope.closeAdditional();
 
             }, (error) => {
 
                 $scope.error = error;
                 $scope.processing = false;
+                $scope.closeAdditional();
 
             });
 
