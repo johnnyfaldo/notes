@@ -16,7 +16,7 @@
                     let data = response.data.data;
 
                     for(let i in data) {
-                        data[i].created_at = new Date(data[i].created_at.replace(/-/g,"/"));
+                        data[i].created_at = this.dateStringToObject(data[i].created_at);
                     }
 
                     resolve(response.data.data);
@@ -64,6 +64,12 @@
                 });
 
             });
+
+        };
+
+        this.dateStringToObject = (dateString) => {
+
+            return new Date(dateString.replace(/-/g,"/"));
 
         };
 

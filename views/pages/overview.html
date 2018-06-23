@@ -25,7 +25,7 @@
                 <tr ng-if="!loading" ui-sref="read({noteId:note.id, note:note})" ng-repeat="note in notes">
                     <td>{{ note.user.name }}</td>
                     <td>{{ note.title }}</td>
-                    <td>{{ note.created_at | yopaDate:"dd/MM/yyyy HH:mm" }}</td>
+                    <td>{{ note.created_at | yopaDate }}</td>
                 </tr>
             </tbody>
             <tfoot>
