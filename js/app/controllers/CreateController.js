@@ -26,9 +26,9 @@
 
             $scope.processing = true;
 
-            NoteService.create($scope.model).then(() => {
+            NoteService.create($scope.model).then((note) => {
 
-                $state.go('read');
+                $state.go('read', {noteId:note.id, note:note});
 
             }, (error) => {
 

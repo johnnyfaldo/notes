@@ -789,3 +789,8 @@ ul li {
   margin-right: 10px;
   float: right;
 }
+.createPage .processingLoad {
+  width: 40px;
+  margin-right: 10px;
+  float: right;
+}
