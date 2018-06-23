@@ -4,13 +4,13 @@
 
     let StorageService = function() {
 
-        this.set = function(key, value) {
+        this.set = (key, value) => {
 
             window.localStorage.setItem(key, JSON.stringify(value));
 
         };
 
-        this.get = function(key) {
+        this.get = (key) => {
 
             try {
 
@@ -24,10 +24,9 @@
 
         }
 
-        this.delete = function(key) {
+        this.delete = (key) => {
             window.localStorage.removeItem(key);
         };
-
 
     };
 

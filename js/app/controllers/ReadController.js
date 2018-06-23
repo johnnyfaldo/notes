@@ -13,6 +13,7 @@
 
         $scope.note = $stateParams.note;
 
+        //model for additional note
         $scope.model = {
             content:null,
             parent:noteId
@@ -22,24 +23,16 @@
 
         $scope.loading = !($stateParams.note);
 
-        $scope.additionalNotes = [];
-
+        //flag to open additional note form
         $scope.additionIsActive = false;
 
-        let setAdditionalNotes = (note, children) => {
-
-            $scope.additionalNotes = (children) ? children : [];
-            $scope.additionalNotes.push(note);
-
-        };
-
+        //optionally pass note as param to save http call/improve performance
         if(!$stateParams.note) {
 
             NoteService.show(noteId).then((note) => {
 
                 $scope.loading = false;
                 $scope.note = note;
-                setAdditionalNotes(note, note.children);
 
             }, (error) => {
 
@@ -47,10 +40,6 @@
                 $scope.error = error;
 
             });
-
-        }else {
-
-            setAdditionalNotes($scope.note, $scope.note.children);
 
         }
 
@@ -66,6 +55,7 @@
 
         };
 
+        //submit additional note form
         $scope.submit = (isValid) => {
 
             if(!isValid) {
@@ -76,10 +66,19 @@
 
             $scope.model.title = $scope.note.title;
 
+            //add the additional note
             NoteService.create($scope.model).then((note) => {
 
                 $scope.model.content = null;
-                $scope.additionalNotes.unshift(note);
+
+                //children array might be null here
+                if(!$scope.note.children) {
+                    $scope.note.children = [];
+                }
+
+                //add it to cards
+                $scope.note.children.unshift(note);
+
                 $scope.processing = false;
                 $scope.closeAdditional();
 

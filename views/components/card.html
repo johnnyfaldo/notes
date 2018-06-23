@@ -1,0 +1,22 @@
+<li class="note">
+
+    <div class="profile">
+        <img alt="profile image" src="{{ $ctrl.card.user.avatar }}" />
+    </div>
+
+    <div class="card">
+
+        <span class="speechArrow"><span class="overlay"></span></span>
+
+        <ul class="details">
+            <li class="name">{{ $ctrl.card.user.name }}</li>
+            <li class="date">{{ $ctrl.card.created_at | yopaDate }}</li>
+        </ul>
+
+        <div class="content">
+            {{ $ctrl.card.content }}
+        </div>
+
+    </div>
+
+</li>

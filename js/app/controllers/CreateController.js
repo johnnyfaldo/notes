@@ -8,8 +8,6 @@
         NoteService
     ) {
 
-        console.log('Create Controller');
-
         $scope.model = {
           title:null,
           content:null

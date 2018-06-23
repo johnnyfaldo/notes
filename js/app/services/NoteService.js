@@ -67,6 +67,7 @@
 
         };
 
+        //turn a date string into date object
         this.dateStringToObject = (dateString) => {
 
             return new Date(dateString.replace(/-/g,"/"));

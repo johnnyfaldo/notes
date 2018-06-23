@@ -14,31 +14,18 @@
 
         $scope.loading = true;
 
-        let useCache = ($stateParams.useCache);
-
-        if(!useCache) {
-
-            NoteService.index().then((notes) => {
-
-                $scope.loading = false;
-                $scope.notes = notes;
-
-                StorageService.set('notes', notes);
-
-            }, (error) => {
-
-                $scope.loading = false;
-
-                alert('Error loading notes: '+error);
-
-            });
-
-        }else {
+        NoteService.index().then((notes) => {
 
             $scope.loading = false;
-            $scope.notes = StorageService.get('notes');
+            $scope.notes = notes;
 
-        }
+        }, (error) => {
+
+            $scope.loading = false;
+
+            alert('Error loading notes: '+error);
+
+        });
 
     };
 
