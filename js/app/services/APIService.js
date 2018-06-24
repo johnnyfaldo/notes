@@ -16,9 +16,7 @@
 
         this.call = (verb, url, data, headers) => {
 
-            if(StorageService.get('token')) {
-                headers = this.injectToken(headers);
-            }
+            headers = this.injectToken(headers);
 
             return $q((resolve, reject) => {
 
@@ -53,7 +51,13 @@
                 headers = {};
             }
 
-            headers.Authorization = StorageService.get('token');
+            let token = StorageService.get('token');
+
+            if(!token) {
+                return headers;
+            }
+
+            headers.Authorization = token;
 
             return headers;
 

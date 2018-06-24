@@ -20,13 +20,6 @@
 
         });
 
-        $stateProvider.state('home', {
-            url:'/',
-            parent:'main',
-            templateUrl: 'views/pages/login.html',
-            controller: 'HomeController'
-        });
-
     };
 
     angular.module(app).config([

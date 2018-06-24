@@ -6,9 +6,9 @@ let app = 'yopa';
     'use strict';
 
     angular.module(app, ['ui.router']).constant('appConfig', {
-        domain:'http://localhost/',
+        domain:'http://notes-api.johnfaldo.com/',
         client_id:2,
-        client_secret:'SxdODYmzYA8jXHAN9N8nJFHk24vTHRaSDc2W596P'
+        client_secret:'AUd4B0abj1xyJMvzZXTRyI4Gtkw1RAtYDUNH1vqa'
     });
 
 }());

@@ -24,7 +24,7 @@
 
                     StorageService.set('token', 'Bearer '+response.data.access_token);
 
-                    resolve(response);
+                    resolve(response.data);
 
                 }, (response) => {
 

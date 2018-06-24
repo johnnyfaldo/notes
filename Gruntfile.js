@@ -17,8 +17,8 @@ module.exports = function(grunt) {
                     'js/app/filters/**/*.js',
                     'js/app/directives/**/*.js',
                     'js/app/components/**/*.js',
-                    'js/app/controllers/**/*.js'
-
+                    'js/app/controllers/**/*.js',
+                    '!**/*.spec.js'
                 ],
                 dest: 'js/<%= pkg.name %>.js'
             },
