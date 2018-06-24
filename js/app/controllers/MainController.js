@@ -3,7 +3,6 @@
     "use strict";
 
     var MainController = function(
-        $rootScope,
         $scope,
         $state,
         AuthService
@@ -19,7 +18,6 @@
     };
 
     angular.module(app).controller('MainController', [
-       '$rootScope',
        '$scope',
        '$state',
        'AuthService',
