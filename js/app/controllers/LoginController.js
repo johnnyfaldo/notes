@@ -27,10 +27,10 @@
             AuthService.login({
                 email:$scope.model.username,
                 password:$scope.model.password
-            }).then((response) => {
+            }).then(() => {
 
-                $state.go('overview');
                 $scope.processing = false;
+                $state.go('overview');
 
             }, (reason) => {
 
