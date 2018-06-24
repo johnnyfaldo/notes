@@ -12,9 +12,6 @@
                 '':{
                     templateUrl:'views/layout.html',
                     controller:'MainController',
-                },
-                'header@main':{
-                    templateUrl:'views/partial/header.html'
                 }
             },
 
