@@ -8,7 +8,7 @@ let yopaDate = () => {
         let today = moment();
         let yesterday = moment().subtract(1, 'day');
 
-        let dateString = dateInQuestion.format('dd/MM/YYYY'),
+        let dateString = dateInQuestion.format('DD/MM/YYYY'),
             timeString = dateInQuestion.format('HH:mm');
 
         if(moment(dateInQuestion).isSame(today, 'day')) {
