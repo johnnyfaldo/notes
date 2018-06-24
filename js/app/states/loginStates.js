@@ -2,7 +2,7 @@
 
     "use strict";
 
-    let RoutesConfig = ($stateProvider) => {
+    let RoutesConfig = ($stateProvider, $urlRouterProvider) => {
 
         $stateProvider.state('login', {
             url: '/login',
@@ -16,10 +16,13 @@
             controller: 'LogoutController'
         });
 
+        $urlRouterProvider.otherwise('/login');
+
     };
 
     angular.module(app).config([
         '$stateProvider',
+        '$urlRouterProvider',
         RoutesConfig
     ]);
 
